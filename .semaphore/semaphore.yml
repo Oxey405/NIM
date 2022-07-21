@@ -1,0 +1,41 @@
+version: v1.0
+name: NIM workflow
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+global_job_config:
+  prologue:
+    commands:
+      - checkout
+      - cache restore
+blocks:
+  - name: Init workflow
+    task:
+      jobs:
+        - name: Installing node and modules
+          commands:
+            - checkout
+            - sem-version node 14
+            - cache restore
+            - npm install
+            - cache store
+    dependencies: []
+  - name: Check code format
+    dependencies:
+      - Init workflow
+    task:
+      jobs:
+        - name: Checking format using Prettier CLI
+          commands:
+            - checkout
+            - cache restore
+            - npm run checkformat
+  - name: Building for x64 and x86 arch
+    dependencies:
+      - Check code format
+    task:
+      jobs:
+        - name: 'Building for Win, Linux, MacOS'
+          commands:
+            - npm run build
