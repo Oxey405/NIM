@@ -1,5 +1,5 @@
 const nexe = require("nexe");
-console.log("Check if you have NASM installed")
+console.log("Check if you have NASM installed");
 console.log("STARTING NIM COMPILATION INTO EXEC");
 //You'll probably need NASM if you are not on Linux / Mac
 console.log("For Linux, Win32, Mac...");

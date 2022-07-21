@@ -36,6 +36,6 @@ blocks:
       - Check code format
     task:
       jobs:
-        - name: 'Building for Win, Linux, MacOS'
+        - name: "Building for Win, Linux, MacOS"
           commands:
             - npm run build
