@@ -1,0 +1,26 @@
+{
+  "name": "node-installer-manager",
+  "version": "1.0.0",
+  "description": "A node installer and version manager for windows",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "postinstall": "node installed.js"
+  },
+  "author": "Oxey405",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "A node installer and version manager for windows"
+  },
+  "keywords": [
+    "node installer",
+    "node version manager",
+    "windows compatible",
+    "node installer and manager"
+  ],
+  "dependencies": {
+    "node-fetch": "^2.6.7",
+    "node-stream-zip": "^1.15.0"
+  }
+}
