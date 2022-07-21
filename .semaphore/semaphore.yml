@@ -23,6 +23,7 @@ blocks:
       jobs:
         - name: Checking format using Prettier CLI
           commands:
+            - cache restore
             - npm run checkformat
   - name: Building for x64 and x86 arch
     dependencies:
@@ -31,4 +32,5 @@ blocks:
       jobs:
         - name: 'Building for Win, Linux, MacOS'
           commands:
+            - cache restore
             - npm run build
