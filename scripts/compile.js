@@ -16,6 +16,7 @@ nexe
       "mac-x64",
     ],
     bundle: true,
+    output: "builds/",
   })
   .then(() => {
     console.log("success");

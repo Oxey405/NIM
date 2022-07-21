@@ -39,3 +39,7 @@ blocks:
         - name: "Building for Win, Linux, MacOS"
           commands:
             - npm run build
+      epilogue:
+        on_pass:
+          commands:
+            - artifact push job builds/
