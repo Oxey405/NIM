@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "postinstall": "node installed.js"
+    "postinstall": "node installed.js",
+    "format": "npx prettier --write .",
+    "checkformat": "npx prettier --check .",
+    "build": "node scripts/compile.js"
   },
   "author": "Oxey405",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "A node installer and version manager for windows"
+    "url": "https://github.com/Oxey405/NIM"
   },
   "keywords": [
     "node installer",
@@ -20,6 +23,7 @@
     "node installer and manager"
   ],
   "dependencies": {
+    "nexe": "^4.0.0-rc.1",
     "node-fetch": "^2.6.7",
     "node-stream-zip": "^1.15.0"
   }
