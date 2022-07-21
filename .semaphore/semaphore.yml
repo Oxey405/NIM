@@ -4,6 +4,11 @@ agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu2004
+global_job_config:
+  prologue:
+    commands:
+      - checkout
+      - cache restore
 blocks:
   - name: Init workflow
     task:
@@ -23,6 +28,7 @@ blocks:
       jobs:
         - name: Checking format using Prettier CLI
           commands:
+            - checkout
             - cache restore
             - npm run checkformat
   - name: Building for x64 and x86 arch
@@ -32,5 +38,4 @@ blocks:
       jobs:
         - name: 'Building for Win, Linux, MacOS'
           commands:
-            - cache restore
             - npm run build
