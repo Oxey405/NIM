@@ -36,10 +36,13 @@ blocks:
       - Check code format
     task:
       jobs:
-        - name: "Building for Win, Linux, MacOS"
+        - name: 'Building for Win, Linux, MacOS'
           commands:
             - npm run build
       epilogue:
         on_pass:
           commands:
             - artifact push job builds/
+      prologue:
+        commands:
+          - npm i nexe -g
