@@ -46,3 +46,4 @@ blocks:
       prologue:
         commands:
           - npm i nexe -g
+          - npm i nexe
